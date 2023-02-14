@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/guess-the-word-bootcamp/static/css/main.5ce1a24f.css",
+    "main.js": "/guess-the-word-bootcamp/static/js/main.09e61fb2.js",
+    "index.html": "/guess-the-word-bootcamp/index.html",
+    "main.5ce1a24f.css.map": "/guess-the-word-bootcamp/static/css/main.5ce1a24f.css.map",
+    "main.09e61fb2.js.map": "/guess-the-word-bootcamp/static/js/main.09e61fb2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5ce1a24f.css",
+    "static/js/main.09e61fb2.js"
+  ]
+}

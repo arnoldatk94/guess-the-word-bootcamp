@@ -15,7 +15,7 @@ export default class FailImage extends React.Component {
 
     return (
       <div style={{opacity: this.props.opacity}}>
-        <img src={Logo} />
+        <img src={Logo} width={400}/>
       </div>
     )
   }

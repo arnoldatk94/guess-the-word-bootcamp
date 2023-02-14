@@ -3,6 +3,7 @@ import { getRandomWord } from "./utils.js";
 import "./App.css";
 import Button from 'react-bootstrap/Button'
 import { Col, Container, Row } from "react-bootstrap";
+import FailImage from "./Components/FailImage.js";
 
 
 class App extends React.Component {
@@ -21,6 +22,7 @@ class App extends React.Component {
       winStatus: false,
       guessButton: "Keep Guessing!",
       roundNumber: 0,
+      imageOpacity: 0,
     };
   }
 
@@ -32,6 +34,7 @@ class App extends React.Component {
       numberOfTries: 10,
       winStatus: false,
       guessButton: "Keep Guessing!",
+      imageOpacity: 0, 
     }));
     roundNumber: this.state.roundNumber += 1
     setTimeout(() => {
@@ -65,6 +68,7 @@ class App extends React.Component {
     this.setState({
       guessedLetters: [...this.state.guessedLetters, inputLetter], // Logs guesses into array
       numberOfTries: this.state.currWord.includes(inputLetter) ? this.state.numberOfTries: this.state.numberOfTries - 1, // minus tries left only if guess is wrong
+      imageOpacity: this.state.currWord.includes(inputLetter) ? this.state.imageOpacity : this.state.imageOpacity + (0.111),
       input: "", // resets input in form for next guess
       
     })
@@ -109,6 +113,7 @@ class App extends React.Component {
 
   render() {
     const disableStatus = this.state.winStatus || this.state.numberOfTries === 0
+    console.log(this.state.imageOpacity)
     return (
       <div className="App">
         <header className="App-header">
@@ -153,7 +158,7 @@ class App extends React.Component {
             <div>{this.state.winStatus ? "YOU GUESSED THE WORD!": ""}</div>
 
             </form>
-        
+            <FailImage opacity={this.state.imageOpacity}/>
           
           {/* Todo: Insert form element here */}
         </header>

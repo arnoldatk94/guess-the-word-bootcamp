@@ -119,6 +119,7 @@ class App extends React.Component {
             <Row>
               <Col>
               <h3>Word Display</h3>
+               {this.generateWordDisplay()}
               </Col>
               <Col>
               <h3>Guessed Letters</h3>

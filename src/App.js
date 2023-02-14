@@ -33,6 +33,7 @@ class App extends React.Component {
       winStatus: false,
       guessButton: "Keep Guessing!",
     }));
+    roundNumber: this.state.roundNumber += 1
     setTimeout(() => {
       this.cheatWord()
     }, 10);
@@ -65,7 +66,7 @@ class App extends React.Component {
       guessedLetters: [...this.state.guessedLetters, inputLetter], // Logs guesses into array
       numberOfTries: this.state.currWord.includes(inputLetter) ? this.state.numberOfTries: this.state.numberOfTries - 1, // minus tries left only if guess is wrong
       input: "", // resets input in form for next guess
-      roundNumber: this.state.roundNumber += 1
+      
     })
 
     
